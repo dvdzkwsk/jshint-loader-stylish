@@ -1,0 +1,30 @@
+{
+  "name": "jshint-loader-stylish",
+  "version": "0.0.0",
+  "description": "Reporter for jshint-loader based on jshint-stylish.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davezuko/jshint-loader-stylish.git"
+  },
+  "keywords": [
+    "jshint",
+    "loader",
+    "stylish",
+    "reporter",
+    "webpack"
+  ],
+  "author": "David Zukowski <david@zuko.me> (http://zuko.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davezuko/jshint-loader-stylish/issues"
+  },
+  "homepage": "https://github.com/davezuko/jshint-loader-stylish",
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "text-table": "^0.2.0"
+  }
+}
