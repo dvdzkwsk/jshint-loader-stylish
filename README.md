@@ -8,7 +8,7 @@ As a big fan of [jshint-stylish](https://github.com/sindresorhus/jshint-stylish)
 ```js
 // webpack.config.js
 var stylishReporter = require('jshint-loader-stylish')({
-  // no options yet...
+  // options...
 });
 
 module.exports = exports = {
@@ -25,12 +25,31 @@ module.exports = exports = {
 };
 ```
 
+## Reporter Styles
+
+Since the regular jshint-stylish output doesn't work as well when errors can't be sorted by file, the default output has been adjusted slightly to give you a bit more information:
+
+![default reporter](docs/default-reporter.png)
+
+If you wish to enable the reporter that more closely adheres to vanilla jshint-stylish output, set the `reporter` configuration property to "true-stylish".
+
+```js
+require('jshint-loader-stylish')({
+  reporter : 'true-stylish'
+});
+```
+
+![true-stylish reporter](docs/true-stylish-reporter.png)
+
 ## Options
+
+### Reporter (String)
+
+Specify the `reporter` configuration property to the string name of the reporter style you wish to use. These can be found in `jshint-loader-stylish/reporters`.
 
 ## TODO
 * [ ] Document config options
-* [ ] Config flag to show evidence property
 
-## Credit
+## Credits
 
 Based on [jshint-stylish](https://github.com/sindresorhus/jshint-stylish) by [sindresorhus](https://github.com/sindresorhus).

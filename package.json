@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/davezuko/jshint-loader-stylish",
   "dependencies": {
-    "chalk": "^1.0.0"
+    "chalk": "^1.0.0",
+    "text-table": "^0.2.0"
   }
 }

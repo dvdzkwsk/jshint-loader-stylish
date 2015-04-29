@@ -6,24 +6,19 @@ var chalkBlue = (function (isWin32) {
 })(process.platform === 'win32');
 
 module.exports = function (opts) {
-  var _config = opts || {};
-
-  return function (errors) {
-    if (!errors) return;
-
-    errors.forEach(function (err) {
-      var isError;
-      if (!err) return;
-
-      isError = err.code && err.code[0] === 'E';
-      console.log(
-        chalk.gray('line ' + err.line),
-        chalk.gray('col ' + err.character),
-        chalk.gray(':: ' + err.evidence)
-      );
-      console.log(
-        isError ? chalk.red(err.reason) : chalkBlue(err.reason), '\n'
-      );
-    });
+  var config = opts || {
+    reporter : 'default'
   };
+
+  try {
+    return require('./reporters/' + reporter)(config);
+  } catch (e) {
+    console.log('Could not find reporter: ' + reporter);
+    return function (errors) {
+      console.log(errors && errors.length ?
+        errors.length + ' jshint errors found' :
+        'No lint errors found.'
+      );
+    }
+  }
 };
