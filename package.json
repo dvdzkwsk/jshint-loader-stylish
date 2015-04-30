@@ -1,6 +1,6 @@
 {
   "name": "jshint-loader-stylish",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Reporter for jshint-loader based on jshint-stylish.",
   "main": "index.js",
   "scripts": {
