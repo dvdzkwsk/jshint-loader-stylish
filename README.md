@@ -31,11 +31,11 @@ Since the regular jshint-stylish output doesn't work as well when errors can't b
 
 ![default reporter](docs/default-reporter.png)
 
-If you wish to enable the reporter that more closely adheres to vanilla jshint-stylish output, set the `reporter` configuration property to "true-stylish".
+If you wish to enable the reporter that more closely adheres to vanilla jshint-stylish output, set the `style` configuration property to "true-stylish".
 
 ```js
 require('jshint-loader-stylish')({
-  reporter : 'true-stylish'
+  style : 'true-stylish'
 });
 ```
 
@@ -43,7 +43,7 @@ require('jshint-loader-stylish')({
 
 ## Options
 
-### style (String)
+### `style` [string]
 
 Use the `style` configuration to reference the name of the reporter style you wish to use. These can be found in `jshint-loader-stylish/reporters`.
 

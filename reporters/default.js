@@ -1,8 +1,14 @@
-var chalk = require('chalk');
+var chalk = require('chalk'),
+    slice = [].slice,
+    chalkBlue = (function (isWin32) {
+      return isWin32 ? chalk.cyan : chalk.blue;
+    })(process.platform === 'win32');
 
-var chalkBlue = (function (isWin32) {
-  return isWin32 ? chalk.cyan : chalk.blue;
-})(process.platform === 'win32');
+
+function log () {
+  var args = slice.apply(arguments);
+  console.log.apply(console, [' '].concat(args));
+}
 
 module.exports = function (config) {
   return function (errors) {
@@ -13,13 +19,12 @@ module.exports = function (config) {
       if (!err) return;
 
       isError = err.code && err.code[0] === 'E';
-      console.log(
-        ' ',
+      log(
         chalk.gray('line ' + err.line),
         chalk.gray('col ' + err.character),
         chalk.gray(':: ' + err.evidence.trim())
       );
-      console.log(
+      log(
         isError ? chalk.red(err.reason) : chalkBlue(err.reason), '\n'
       );
     });
