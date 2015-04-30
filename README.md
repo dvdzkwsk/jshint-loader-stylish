@@ -43,9 +43,9 @@ require('jshint-loader-stylish')({
 
 ## Options
 
-### Reporter (String)
+### style (String)
 
-Specify the `reporter` configuration property to the string name of the reporter style you wish to use. These can be found in `jshint-loader-stylish/reporters`.
+Use the `style` configuration to reference the name of the reporter style you wish to use. These can be found in `jshint-loader-stylish/reporters`.
 
 ## TODO
 * [ ] Document config options
