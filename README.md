@@ -1,9 +1,11 @@
 JSHint-Loader Stylish Reporter
 ==============================
 
-As a big fan of [jshint-stylish](https://github.com/sindresorhus/jshint-stylish), I really wanted to use it with a webpack-based build system. However, [jshint-loader](https://github.com/webpack/jshint-loader) isn't compatible with normal reporters, so instead I forked jshint-stylish to create this! Error reporting resembles that of jshint, with a few slight differences. For example, errors returned from jshint-loader don't include file names, only line numbers, evidence strings, and other miscellaneous data. As a result, the report doesn't include file-specific sections, but is instead a single list of error messages.
+As a big fan of [jshint-stylish](https://github.com/sindresorhus/jshint-stylish), I really wanted to use it with a webpack-based build system. However, [jshint-loader](https://github.com/webpack/jshint-loader) isn't compatible with normal reporters, so instead I forked jshint-stylish to create this! Error reporting resembles that of jshint, with a few slight differences due to what error data is returned from jshint-loader.
 
 ## Usage
+
+`npm install --save-dev jshint-loader-stylish`
 
 ```js
 // webpack.config.js
@@ -48,7 +50,7 @@ require('jshint-loader-stylish')({
 Use the `style` configuration to reference the name of the reporter style you wish to use. These can be found in `jshint-loader-stylish/reporters`.
 
 ## TODO
-* [ ] Document config options
+* [ ] Is there a way to get jshint-loader to reference file names?
 
 ## Credits
 
