@@ -16,13 +16,14 @@ module.exports = function (config) {
 
     errors.forEach(function (err) {
       var isError;
+
       if (!err) return;
 
       isError = err.code && err.code[0] === 'E';
       log(
         chalk.gray('line ' + err.line),
         chalk.gray('col ' + err.character),
-        chalk.gray(':: ' + err.evidence.trim())
+        chalk.gray(':: ' + err.evidence ? err.evidence.trim() : 'no evidence')
       );
       log(
         isError ? chalk.red(err.reason) : chalkBlue(err.reason), '\n'
