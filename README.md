@@ -1,6 +1,8 @@
 JSHint-Loader Stylish Reporter
 ==============================
 
+**Notice**: This package is no longer being maintained, as [ESLint](http://eslint.org/) is prefered over JSHint for Webpack (especially since it can reference source files, not just line numbers). Please check that out instead, it's pretty awesome!
+
 As a big fan of [jshint-stylish](https://github.com/sindresorhus/jshint-stylish), I really wanted to use it with a webpack-based build system. However, [jshint-loader](https://github.com/webpack/jshint-loader) isn't compatible with normal reporters, so instead I forked jshint-stylish to create this! Error reporting resembles that of jshint, with a few slight differences due to what error data is returned from jshint-loader.
 
 ## Usage
