@@ -27,6 +27,9 @@ module.exports = function (config) {
       return row;
     });
 
-    console.log(table(rows));
+    var emitter = this.emitWarning;
+    if (!emitter)
+        throw new Error("Your module system doesn't support emitWarning. Update availible? \n" + message);
+    emitter(table(rows));
   };
 };
